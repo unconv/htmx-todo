@@ -1,0 +1,180 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.app {
+    margin: 0 auto;
+    width: 900px;
+    max-width: calc( 100% - 30px );
+}
+
+h1 {
+    text-align: center;
+}
+
+.top-bar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.task-counter {
+    background: rgb(2, 70, 165);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    width: 30%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.task-counter h2 {
+    margin: 0 0 5px 0 ;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+#todoform {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+    align-content: center;
+    justify-content: center;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.category-select {
+    padding: 5px;
+}
+
+.todo-name {
+    padding: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: rgb(20, 128, 31);
+    padding: 7px 10px;
+}
+
+button:hover {
+    background: rgb(39, 174, 53);
+}
+
+main {
+    display: flex;
+    gap: 5px;
+}
+
+.sidebar {
+    width: 30%;
+}
+
+.category {
+    padding: 5px 9px;
+    border-radius: 10px;
+    background: #ededed;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+    text-decoration: none;
+}
+
+.category .count {
+    color: #fff;
+    background: rgb(222, 124, 12);
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.todo-list {
+    overflow: auto;
+    flex: 1;
+}
+
+.todo {
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    background: #e6edf5;
+    margin-bottom: 5px;
+}
+
+.todo:nth-child(odd) {
+    background: #d9e6f4;
+}
+
+.todo-name {
+    flex: 1;
+}
+
+.todo button {
+    width: 15%;
+}
+
+.todo.done {
+    opacity: 0.3;
+}
+
+button.undone {
+    background:rgb(222, 124, 12);
+}
+
+.warning, .success {
+    background: red;
+    color: white;
+    padding: 8px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    animation-name: message;
+    animation-duration: 5s;
+    text-align: center;
+}
+
+.success {
+    background: rgb(36, 152, 0);
+}
+
+@keyframes message {
+    0% {transform: translateY(-100%)}
+    10% {transform: translateY(0%)}
+    90% {transform: translateY(0%)}
+    100% {transform: translateY(-100%)}
+}

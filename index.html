@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <title>Todo App</title>
+</head>
+<body>
+    <div id="message"></div>
+    <div class="app">
+        <h1>HTMX Todo App</h1>
+        <div class="top-bar">
+            <div class="task-counter">
+                <h2>Tasks</h2>
+                <div class="row">
+                    <span class="completed-count" hx-get="/api.php?action=completed_count" hx-trigger="load, done_count from:body"></span> /
+                    <span class="total-count" hx-get="/api.php?action=total_count" hx-trigger="load, todo_count from:body"></span>
+                </div>
+            </div>
+            <div class="todo-form" hx-get="/api.php?action=todo_form" hx-trigger="load, todo_added from:body"></div>
+        </div>
+        <main>
+            <div class="sidebar" hx-get="/api.php?action=category_list" hx-trigger="load, todo_added from:body"></div>
+            <div class="todo-list" hx-get="/api.php?action=todo_list" hx-trigger="load, todo_added from:body" hx-swap="outerHTML"></div>
+        </main>
+    </div>
+</body>
+</html>
